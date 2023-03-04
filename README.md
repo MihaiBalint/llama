@@ -3,7 +3,23 @@
 This repository is intended as a minimal, hackable and readable example to load [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) ([arXiv](https://arxiv.org/abs/2302.13971v1)) models and run inference.
 In order to download the checkpoints and tokenizer, fill this [google form](https://forms.gle/jk851eBVbX1m5TAv5)
 
-### Setup
+### Setup (using nvidia docker)
+Build the image with the code and dependencies
+```
+sudo docker-build-image.sh
+```
+
+Get the LLaMa model weights (see Download section below or skip that if you already have them). Put the model weights in a folder named `LLaMa-distrib`.
+```
+mkdir -p LLaMa-distrib
+```
+
+Run the original example
+```
+sudo docker-run-example.sh
+```
+
+### Setup (using Conda)
 In a conda env with pytorch / cuda available, run
 ```
 pip install -r requirements.txt
